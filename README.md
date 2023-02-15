@@ -5,17 +5,21 @@ CAPTCHAs (Completely Automated Public Turing test to tell Computers and Humans A
 ---
 
 #### Method to find out what character are present in the image:
-0. Initial image
+- Initial image
+
 ![alt text](https://github.com/saqeeb360/Automated-System-for-Solving-CAPTCHAs/blob/master/1.Initial-img.png?raw=true)
 
 1.	Find corner pixel with max frequency to get the background colour of the image 
 2.	Change the background to white
+
 ![Image without background](https://github.com/saqeeb360/Automated-System-for-Solving-CAPTCHAs/blob/master/2.Background-Extraction.png?raw=true)
 
 3.	Now Dilate the image to remove the stray lines 
+
 ![Dilated Image](https://github.com/saqeeb360/Automated-System-for-Solving-CAPTCHAs/blob/master/3.Dilated-image.png?raw=true)
 
 4.	Convert the image to grayscale
+
 ![Grayscale Image](https://github.com/saqeeb360/Automated-System-for-Solving-CAPTCHAs/blob/master/4.Grayscale.png?raw=true)
 
 5.	Segment image into 3 characters 
@@ -24,16 +28,22 @@ CAPTCHAs (Completely Automated Public Turing test to tell Computers and Humans A
 8.	This will help to get the start and end coordinates of the character 
 9.	Here, We have used window size of 30 pixel to detect characters and ignore any remaining noise (small stray lines) after dilation
 10.	Get the bounding box of the three characters
+
 ![First letter](https://github.com/saqeeb360/Automated-System-for-Solving-CAPTCHAs/blob/master/symbol_1_150x150.png?raw=true)
+
 ![Second letter](https://github.com/saqeeb360/Automated-System-for-Solving-CAPTCHAs/blob/master/symbol_2_150x150.png?raw=true)
+
 ![Third letter](https://github.com/saqeeb360/Automated-System-for-Solving-CAPTCHAs/blob/master/symbol_3_150x150.png?raw=true)
 
 11.	We found 37 such images where our method was not able to segment images in three characters out of 2000 images. 
 12.	So we divide the image equally in three segment of size 150x150 by leaving margin of 15 pixel in the beginning and 10 pixel in the following two.
 13.	Extracting each character from the image using the bounding box we get from the above approach.
 14.	Now we resize the image into 30x30 pixel to ...
+
 ![First letter](https://github.com/saqeeb360/Automated-System-for-Solving-CAPTCHAs/blob/master/symbol_1_30x30.png?raw=true)
+
 ![Second letter](https://github.com/saqeeb360/Automated-System-for-Solving-CAPTCHAs/blob/master/symbol_2_30x30.png?raw=true)
+
 ![Third letter](https://github.com/saqeeb360/Automated-System-for-Solving-CAPTCHAs/blob/master/symbol_3_30x30.png?raw=true)
 
 15.	Now we flatten the image to convert into 1D array

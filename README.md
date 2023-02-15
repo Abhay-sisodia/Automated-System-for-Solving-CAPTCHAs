@@ -38,7 +38,7 @@ CAPTCHAs (Completely Automated Public Turing test to tell Computers and Humans A
 11.	We found 37 such images where our method was not able to segment images in three characters out of 2000 images. 
 12.	So we divide the image equally in three segment of size 150x150 by leaving margin of 15 pixel in the beginning and 10 pixel in the following two.
 13.	Extracting each character from the image using the bounding box we get from the above approach.
-14.	Now we resize the image into 30x30 pixel to ...
+14.	Now we resize the image into 30x30 pixel from 150x150
 
 ![First letter](https://github.com/saqeeb360/Automated-System-for-Solving-CAPTCHAs/blob/master/symbol_1_30x30.png?raw=true)
 
